@@ -16,7 +16,7 @@ deploy:
   env: "Dockerreact-env"
   bucket_name: "elasticbeanstalk-us-east-2-735881687365" # search for S3 service in AWS; bucket is basically your HDD
   bucket_path: "docker-react" #same as app name, by default
-    on:
-      branch: master
+  on:
+    branch: master
   access_key_id: $AWS_ACCESS_KEY # search for IAM in AWS
   secret_access_key: $AWS_SECRET_KEY # search for IAM in AWS
