@@ -8,3 +8,15 @@ before_install:
 
 script:
   - docker run mtrifan/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-735881687365" # search for S3 service in AWS; bucket is basically your HDD
+  bucket_path: "docker-react" #same as app name, by default
+    on:
+      branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
